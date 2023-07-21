@@ -2,6 +2,10 @@
 
 > Cypress testing Content-Security-Policy against XSS attacks
 
+📝 Read the blog post [CSP Testing Using Cypress](https://glebbahmutov.com/blog/csp-testing-using-cypress/)
+
+![Stop XSS attack](./images/stop2.png)
+
 ## Learn more
 
 - [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
