@@ -1,5 +1,11 @@
 /// <reference types="cypress" />
 
+// https://github.com/bahmutov/cypress-slow-down
+import { slowCypressDown } from 'cypress-slow-down'
+// slow down each command by 700ms
+// to make the demo videos easier to understand
+slowCypressDown(700)
+
 it('adds a new message', () => {
   cy.visit('/')
   cy.contains('button', 'Send').should('be.disabled')
