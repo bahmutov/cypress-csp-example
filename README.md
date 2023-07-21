@@ -2,6 +2,10 @@
 
 > Cypress testing Content-Security-Policy against XSS attacks
 
+## Learn more
+
+- [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2023

@@ -6,6 +6,9 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
+        // ughh, have to allow unsafe inline styles to be added by Cypress
+        // https://github.com/cypress-io/cypress/issues/21374
+        styleSrc: ["'self'", "'unsafe-inline'"],
         reportUri: ['/security-attacks'],
       },
     },
