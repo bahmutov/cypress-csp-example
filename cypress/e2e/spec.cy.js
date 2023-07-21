@@ -18,3 +18,21 @@ it('adds a bold message', () => {
     .should('have.length', 1)
     .and('have.text', 'Important')
 })
+
+it('injecting <script> tag does not work', () => {
+  cy.on('window:load', (win) => cy.stub(win.console, 'log').as('log'))
+  cy.visit('/')
+  cy.get('#message').type('Hello<script>console.log(`hacked`)</script>')
+  cy.contains('button', 'Send').click()
+  cy.contains('#messages li', 'Hello')
+  cy.get('@log').should('not.have.been.called')
+})
+
+it('injects XSS via img onerror attribute', () => {
+  cy.on('window:load', (win) => cy.stub(win.console, 'log').as('log'))
+  cy.visit('/')
+  cy.get('#message').type('Hello<img src="" onerror="console.log(`hacked`)" />')
+  cy.contains('button', 'Send').click()
+  cy.contains('#messages li', 'Hello')
+  cy.get('@log').should('have.been.calledWith', 'hacked')
+})
