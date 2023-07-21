@@ -10,7 +10,7 @@ it('adds a new message', () => {
   cy.contains('button', 'Send').should('be.disabled')
 })
 
-it.only('adds a bold message', () => {
+it('adds a bold message', () => {
   cy.visit('/')
   cy.get('#message').type('<b>Important</b>')
   cy.contains('button', 'Send').click()

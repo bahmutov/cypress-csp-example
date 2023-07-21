@@ -13,7 +13,7 @@ message$.addEventListener('input', () => {
 send$.addEventListener('click', () => {
   const message = message$.value
   const li = document.createElement('li')
-  li.innerText = message
+  li.innerHTML = message
   messages$.appendChild(li)
   message$.value = ''
   send$.setAttribute('disabled', 'disabled')
