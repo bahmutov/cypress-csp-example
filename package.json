@@ -1,8 +1,9 @@
 {
   "name": "cypress-csp-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cypress testing Content-Security-Policy against XSS attacks",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "cypress open",
     "start": "node .",
