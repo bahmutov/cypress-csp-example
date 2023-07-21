@@ -1,6 +1,9 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  // https://on.cypress.io/experiments
+  // https://github.com/cypress-io/cypress/issues/1030
+  experimentalCspAllowList: ['default-src', 'script-src'],
   e2e: {
     // baseUrl, etc
     baseUrl: 'http://localhost:3003',
