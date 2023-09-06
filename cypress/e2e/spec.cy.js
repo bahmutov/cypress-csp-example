@@ -34,7 +34,8 @@ it('injecting <script> tag does not work', () => {
   cy.get('@log').should('not.have.been.called')
 })
 
-it('injects XSS via img onerror attribute', () => {
+// SKIP disable CSP protection to see the injection
+it.skip('injects XSS via img onerror attribute', () => {
   cy.on('window:load', (win) => cy.stub(win.console, 'log').as('log'))
   cy.visit('/')
   cy.get('#message').type('Hello<img src="" onerror="console.log(`hacked`)" />')
