@@ -1,4 +1,4 @@
-# cypress-csp-example
+# cypress-csp-example ![cypress version](https://img.shields.io/badge/cypress-12.17.2-brightgreen)
 
 > Cypress testing Content-Security-Policy against XSS attacks
 
