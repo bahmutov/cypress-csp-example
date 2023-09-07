@@ -23,6 +23,15 @@ it('can strip CSP and allow injections', () => {
   cy.get('@log').should('have.been.calledWith', 'hacked')
 })
 
+it('stops XSS', () => {
+  cy.on('window:load', (win) => cy.stub(win.console, 'log').as('log'))
+  cy.visit('/')
+  cy.get('#message').type('Hello<img src="" onerror="console.log(`hacked`)" />')
+  cy.contains('button', 'Send').click()
+  cy.contains('#messages li', 'Hello')
+  cy.get('@log').should('not.be.called')
+})
+
 it('stops XSS and reports CSP violations', () => {
   cy.intercept('/security-attacks', {}).as('cspAttacks')
 
