@@ -2,7 +2,8 @@
 
 > Cypress testing Content-Security-Policy against XSS attacks
 
-📝 Read the blog post [CSP Testing Using Cypress](https://glebbahmutov.com/blog/csp-testing-using-cypress/)
+- 📝 Read the blog post [CSP Testing Using Cypress](https://glebbahmutov.com/blog/csp-testing-using-cypress/)
+- 🖥️ Flip through the slides [End-To-End Test Your Web Security](slides https://slides.com/bahmutov/e2e-security)
 
 ![Stop XSS attack](./images/stop2.png)
 
