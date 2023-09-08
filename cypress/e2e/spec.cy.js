@@ -43,3 +43,13 @@ it.skip('injects XSS via img onerror attribute', () => {
   cy.contains('#messages li', 'Hello')
   cy.get('@log').should('have.been.calledWith', 'hacked')
 })
+
+// SKIP disable CSP protection to see the injection
+it.skip('injects XSS via b onclick attribute', () => {
+  cy.on('window:load', (win) => cy.stub(win.console, 'log').as('log'))
+  cy.visit('/')
+  cy.get('#message').type('<b onclick="console.log(`hacked`)">Hello</b>')
+  cy.contains('button', 'Send').click()
+  cy.contains('#messages li b', 'Hello').click()
+  cy.get('@log').should('have.been.calledWith', 'hacked')
+})

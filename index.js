@@ -1,6 +1,7 @@
 const express = require('express')
 const helmet = require('helmet')
 const app = express()
+// uncomment to set content-security-policy
 app.use(
   helmet({
     contentSecurityPolicy: {
