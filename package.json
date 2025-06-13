@@ -20,7 +20,7 @@
   "devDependencies": {
     "cypress": "^13.0.0",
     "cypress-slow-down": "^1.2.1",
-    "prettier": "3.3.3",
+    "prettier": "3.5.3",
     "start-server-and-test": "^2.0.0"
   }
 }
